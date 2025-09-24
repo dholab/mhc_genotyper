@@ -9,7 +9,7 @@ This pipeline performs MHC genotyping on Illumina paired-end sequencing data
 from three non-human primate species:
 
 - Rhesus macaques (Mamu)
-- Cynomolgus macaques (MCM/Mafa)
+- (Mauritian) Cynomolgus macaques (MCM/Mafa)
 - Pig-tailed macaques (Mane)
 
 The pipeline identifies MHC alleles and calls haplotypes based on diagnostic
@@ -74,10 +74,10 @@ This will open the `mhc_genotyper.ipynb` notebook in your browser.
    `ref/` directory:
    - `26128_ipd-mhc-mamu-2021-07-09.miseq.RWv4.fasta` - Rhesus macaque MHC
      alleles
-   - `MCM_MHC-all_mRNA-MiSeq_singles-RENAME_20Jun16.fasta` - Cynomolgus macaque
-     MHC alleles
-   - `Mafa_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta` - Alternative Cynomolgus
-     reference
+   - `MCM_MHC-all_mRNA-MiSeq_singles-RENAME_20Jun16.fasta` - Mauritian
+     Cynomolgus macaque (MCM) MHC alleles
+   - `Mafa_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta` - Complete Cynomolgus
+     reference (MCM and other Mafa)
    - `SBT195_MHCII_primers_2Sep13.fasta` - PCR primer sequences
 
 ### Important Note for Local Execution
@@ -121,7 +121,8 @@ CSV file with the following required columns:
 - `Sample_Name`: Internal sample name
 - `Sample_Project`: Project identifier
 - `Description`: Sample description (can be blank)
-- `Species`: One of: Rhesus, Cynomolgus, Pig-tailed (or Mamu, MCM, Mane)
+- `Species`: One of: Rhesus, (Mauritian) Cynomolgus, Pig-tailed (or Mamu, MCM,
+  Mane)
 
 Example:
 
