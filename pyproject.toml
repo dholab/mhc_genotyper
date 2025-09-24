@@ -50,14 +50,12 @@ vsearch = ">=2.30.0,<3"
 bbmap = ">=39.33,<40"
 
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
-[tool.pixi.pypi-dependencies]
-mhc_genotyper = { path = ".", editable = true }
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
 py-modules = []
+include-package-data = true
 
 [tool.pixi.tasks]
 notebook = "jupyter notebook mhc_genotyper.ipynb"
