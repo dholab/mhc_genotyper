@@ -1,0 +1,64 @@
+[project]
+name = "mhc_genotyper"
+version = "0.1.0"
+description = "MHC genotyping pipeline for Illumina short-read sequencing data from non-human primates"
+readme = "README.md"
+requires-python = ">= 3.9"
+license = {file = "LICENSE"}
+authors = [
+    {name = "David H. O'Connor", email = "dhoconno@wisc.edu"},
+    {name = "Nicholas R. Minor", email = "nrminor@wisc.edu"}
+]
+keywords = [
+    "bioinformatics",
+    "MHC",
+    "genotyping",
+    "immunogenetics",
+    "primates",
+    "illumina",
+    "sequencing"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS"
+]
+dependencies = [
+    "jupyter>=1.1.1",
+    "numpy>=2.0.2",
+    "pandas>=2.3.2",
+    "pysam>=0.23.3",
+    "xlsxwriter>=3.2.9",
+]
+
+[project.urls]
+Repository = "https://github.com/dholab/mhc_genotyper"
+
+[tool.pixi.workspace]
+channels = ["conda-forge", "bioconda"]
+platforms = ["osx-arm64", "osx-64", "linux-64", "linux-aarch64"]
+
+[tool.pixi.dependencies]
+pigz = ">=2.8,<3"
+vsearch = ">=2.30.0,<3"
+bbmap = ">=39.33,<40"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pixi.pypi-dependencies]
+mhc_genotyper = { path = ".", editable = true }
+
+[tool.setuptools]
+py-modules = []
+
+[tool.pixi.tasks]
+notebook = "jupyter notebook mhc_genotyper.ipynb"
+check-deps = "which bbmap.sh && which vsearch && which pigz"
