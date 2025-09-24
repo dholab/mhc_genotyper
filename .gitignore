@@ -1,9 +1,17 @@
-/venv/*
-.DS_Store
-*/.DS_Store
-/ref/.DS_Store
-/venv/
-.idea
-.idea/*
-# pixi environments
-.pixi
+*
+
+!.gitattributes
+!.gitignore
+!LICENSE
+!mhc_genotyper.ipynb
+!pixi.lock
+!pyproject.toml
+!README.md
+!uv.lock
+
+!/ref/
+!/ref/26128_ipd-mhc-mamu-2021-07-09.miseq.RWv4.fasta
+!/ref/Mafa_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta
+!/ref/MCM_MHC-all_mRNA-MiSeq_singles-RENAME_20Jun16.fasta
+!/ref/SBT195_MHCII_primers_2Sep13.fasta
+
